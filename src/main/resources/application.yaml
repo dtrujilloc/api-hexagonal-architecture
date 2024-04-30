@@ -2,12 +2,12 @@ spring:
   application:
     name: "api"
   datasource:
-    url: jdbc:h2:mem:mydb
+    url: jdbc:h2:mem:neorisDB
     username: neoris
     password: neoris_123
     driverClassName: org.h2.Driver
-    jpa:
-      database-platform: org.hibernate.dialect.H2Dialect
-      defer-datasource-initialization: true
-    h2:
-      console.enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
