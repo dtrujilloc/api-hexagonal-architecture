@@ -1,11 +1,11 @@
 package com.example.api.domain.port.output;
 
-import com.example.api.domain.model.Price;
+import com.example.api.domain.model.PriceModel;
 
 import java.time.LocalDateTime;
 
 public interface IPricePersistOutputPort {
 
-    Price getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date);
+    PriceModel getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date);
 
 }

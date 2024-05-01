@@ -1,6 +1,6 @@
 package com.example.api.application.usecase;
 
-import com.example.api.domain.model.Price;
+import com.example.api.domain.model.PriceModel;
 import com.example.api.domain.port.input.IPriceServiceInputPort;
 import com.example.api.domain.port.output.IPricePersistOutputPort;
 
@@ -15,7 +15,7 @@ public class PriceUseCase implements IPriceServiceInputPort {
     }
 
     @Override
-    public Price getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date) {
+    public PriceModel getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date) {
         return null;
     }
 }

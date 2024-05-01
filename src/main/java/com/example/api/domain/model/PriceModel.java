@@ -1,18 +1,8 @@
 package com.example.api.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "Price")
-public class Price {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PriceModel {
     private int priceList;
     private int brandId;
     private LocalDateTime startDate;
@@ -22,7 +12,7 @@ public class Price {
     private double price;
     private String currency;
 
-    public Price(int priceList, int brandId, LocalDateTime startDate, LocalDateTime endDate, int productId, int priority, double price, String currency) {
+    public PriceModel(int priceList, int brandId, LocalDateTime startDate, LocalDateTime endDate, int productId, int priority, double price, String currency) {
         this.priceList = priceList;
         this.brandId = brandId;
         this.startDate = startDate;
@@ -33,7 +23,7 @@ public class Price {
         this.currency = currency;
     }
 
-    public Price() {
+    public PriceModel() {
     }
 
     public int getBrandId() {
