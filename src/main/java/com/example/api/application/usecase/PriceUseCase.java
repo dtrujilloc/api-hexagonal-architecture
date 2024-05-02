@@ -16,6 +16,6 @@ public class PriceUseCase implements IPriceServiceInputPort {
 
     @Override
     public PriceModel getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date) {
-        return null;
+        return pricePersistOutputPort.getPriceByProductIdAndBrandIdAndDate(productId, brandId, date);
     }
 }
