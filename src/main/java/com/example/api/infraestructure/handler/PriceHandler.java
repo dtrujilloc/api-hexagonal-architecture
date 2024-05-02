@@ -1,6 +1,6 @@
 package com.example.api.infraestructure.handler;
 
-import com.example.api.application.dto.PriceResponseDto;
+import com.example.api.infraestructure.dto.PriceResponseDto;
 import com.example.api.domain.model.PriceModel;
 import com.example.api.domain.port.input.IPriceServiceInputPort;
 import com.example.api.infraestructure.mapper.IPriceMapper;

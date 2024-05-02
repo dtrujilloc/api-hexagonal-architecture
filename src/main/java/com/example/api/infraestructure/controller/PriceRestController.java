@@ -1,6 +1,6 @@
 package com.example.api.infraestructure.controller;
 
-import com.example.api.application.dto.PriceResponseDto;
+import com.example.api.infraestructure.dto.PriceResponseDto;
 import com.example.api.infraestructure.handler.PriceHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
