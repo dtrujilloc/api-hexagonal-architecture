@@ -1,4 +1,4 @@
-package com.example.api.infraestructure.controller;
+package com.example.api.infraestructure.adapter.input.restcontroller;
 
 import com.example.api.domain.model.PriceModel;
 import com.example.api.domain.port.input.IPriceServiceInputPort;

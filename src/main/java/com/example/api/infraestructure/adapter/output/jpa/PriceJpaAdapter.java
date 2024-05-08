@@ -22,7 +22,7 @@ public class PriceJpaAdapter implements IPricePersistOutputPort {
     @Override
     public PriceModel getPriceByProductIdAndBrandIdAndDate(int productId, int brandId, LocalDateTime date) {
 
-        List<PriceJpaEntity> priceJpaEntityList = priceJpaRepository.getPriceByProductIdAndBrandIdAndBetweenDate(productId, brandId, date);
+        List<PriceJpaEntity> priceJpaEntityList = priceJpaRepository.getPriceByProductIdAndBrandIdAndDateBetweenStartDateAndEndDate(productId, brandId, date);
 
         return priceJpaEntityList.stream()
                 .max(Comparator.comparing(PriceJpaEntity::getPriority))

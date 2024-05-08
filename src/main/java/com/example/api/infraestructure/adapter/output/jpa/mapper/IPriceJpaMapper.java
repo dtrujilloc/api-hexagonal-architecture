@@ -7,8 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface IPriceJpaMapper {
 
-    PriceJpaEntity priceModelToPriceJpaEntity(PriceModel model);
-
     PriceModel priceJpaEntityToPriceModel(PriceJpaEntity entity);
 
 }

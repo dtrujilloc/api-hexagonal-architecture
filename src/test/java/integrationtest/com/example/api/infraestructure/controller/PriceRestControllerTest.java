@@ -1,6 +1,6 @@
 package integrationtest.com.example.api.infraestructure.controller;
 
-import com.example.api.infraestructure.dto.PriceResponseDto;
+import com.example.api.domain.model.PriceModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -37,7 +37,6 @@ class PriceRestControllerTest {
         Integer priceListExpected = 1;
         Integer brandIdExpected = 1;
         Integer productIdExpected = 35455;
-        LocalDateTime applicationDateExpected = LocalDateTime.parse(applicationDateString);
         LocalDateTime startDateExpected = LocalDateTime.of(2020, 6, 14, 0, 0, 0);
         LocalDateTime endDateExpected = LocalDateTime.of(2020, 12, 31, 23, 59, 59);
         Double priceExpected = 35.5;
@@ -49,15 +48,14 @@ class PriceRestControllerTest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        PriceResponseDto priceResponseDto = mapper.readValue(contentAsString, PriceResponseDto.class);
+        PriceModel priceResponse = mapper.readValue(contentAsString, PriceModel.class);
 
-        Assertions.assertEquals(priceListExpected, priceResponseDto.getPriceList());
-        Assertions.assertEquals(brandIdExpected, priceResponseDto.getBrandId());
-        Assertions.assertEquals(productIdExpected, priceResponseDto.getProductId());
-        Assertions.assertEquals(applicationDateExpected, priceResponseDto.getApplicationDate());
-        Assertions.assertEquals(startDateExpected, priceResponseDto.getStartDate());
-        Assertions.assertEquals(endDateExpected, priceResponseDto.getEndDate());
-        Assertions.assertEquals(priceExpected, priceResponseDto.getPrice());
+        Assertions.assertEquals(priceListExpected, priceResponse.getPriceList());
+        Assertions.assertEquals(brandIdExpected, priceResponse.getBrandId());
+        Assertions.assertEquals(productIdExpected, priceResponse.getProductId());
+        Assertions.assertEquals(startDateExpected, priceResponse.getStartDate());
+        Assertions.assertEquals(endDateExpected, priceResponse.getEndDate());
+        Assertions.assertEquals(priceExpected, priceResponse.getPrice());
     }
 
     @Test
@@ -68,7 +66,6 @@ class PriceRestControllerTest {
         Integer priceListExpected = 2;
         Integer brandIdExpected = 1;
         Integer productIdExpected = 35455;
-        LocalDateTime applicationDateExpected = LocalDateTime.parse(applicationDateString);
         LocalDateTime startDateExpected = LocalDateTime.of(2020, 6, 14, 15, 0, 0);
         LocalDateTime endDateExpected = LocalDateTime.of(2020, 6, 14, 18, 30, 0);
         Double priceExpected = 25.45;
@@ -80,15 +77,14 @@ class PriceRestControllerTest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        PriceResponseDto priceResponseDto = mapper.readValue(contentAsString, PriceResponseDto.class);
+        PriceModel priceResponse = mapper.readValue(contentAsString, PriceModel.class);
 
-        Assertions.assertEquals(priceListExpected, priceResponseDto.getPriceList());
-        Assertions.assertEquals(brandIdExpected, priceResponseDto.getBrandId());
-        Assertions.assertEquals(productIdExpected, priceResponseDto.getProductId());
-        Assertions.assertEquals(applicationDateExpected, priceResponseDto.getApplicationDate());
-        Assertions.assertEquals(startDateExpected, priceResponseDto.getStartDate());
-        Assertions.assertEquals(endDateExpected, priceResponseDto.getEndDate());
-        Assertions.assertEquals(priceExpected, priceResponseDto.getPrice());
+        Assertions.assertEquals(priceListExpected, priceResponse.getPriceList());
+        Assertions.assertEquals(brandIdExpected, priceResponse.getBrandId());
+        Assertions.assertEquals(productIdExpected, priceResponse.getProductId());
+        Assertions.assertEquals(startDateExpected, priceResponse.getStartDate());
+        Assertions.assertEquals(endDateExpected, priceResponse.getEndDate());
+        Assertions.assertEquals(priceExpected, priceResponse.getPrice());
     }
 
     @Test
@@ -99,7 +95,6 @@ class PriceRestControllerTest {
         Integer priceListExpected = 1;
         Integer brandIdExpected = 1;
         Integer productIdExpected = 35455;
-        LocalDateTime applicationDateExpected = LocalDateTime.parse(applicationDateString);
         LocalDateTime startDateExpected = LocalDateTime.of(2020, 6, 14, 0, 0, 0);
         LocalDateTime endDateExpected = LocalDateTime.of(2020, 12, 31, 23, 59, 59);
         Double priceExpected = 35.5;
@@ -111,15 +106,14 @@ class PriceRestControllerTest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        PriceResponseDto priceResponseDto = mapper.readValue(contentAsString, PriceResponseDto.class);
+        PriceModel priceResponse = mapper.readValue(contentAsString, PriceModel.class);
 
-        Assertions.assertEquals(priceListExpected, priceResponseDto.getPriceList());
-        Assertions.assertEquals(brandIdExpected, priceResponseDto.getBrandId());
-        Assertions.assertEquals(productIdExpected, priceResponseDto.getProductId());
-        Assertions.assertEquals(applicationDateExpected, priceResponseDto.getApplicationDate());
-        Assertions.assertEquals(startDateExpected, priceResponseDto.getStartDate());
-        Assertions.assertEquals(endDateExpected, priceResponseDto.getEndDate());
-        Assertions.assertEquals(priceExpected, priceResponseDto.getPrice());
+        Assertions.assertEquals(priceListExpected, priceResponse.getPriceList());
+        Assertions.assertEquals(brandIdExpected, priceResponse.getBrandId());
+        Assertions.assertEquals(productIdExpected, priceResponse.getProductId());
+        Assertions.assertEquals(startDateExpected, priceResponse.getStartDate());
+        Assertions.assertEquals(endDateExpected, priceResponse.getEndDate());
+        Assertions.assertEquals(priceExpected, priceResponse.getPrice());
     }
 
     @Test
@@ -130,7 +124,6 @@ class PriceRestControllerTest {
         Integer priceListExpected = 3;
         Integer brandIdExpected = 1;
         Integer productIdExpected = 35455;
-        LocalDateTime applicationDateExpected = LocalDateTime.parse(applicationDateString);
         LocalDateTime startDateExpected = LocalDateTime.of(2020, 6, 15, 0, 0, 0);
         LocalDateTime endDateExpected = LocalDateTime.of(2020, 6, 15, 11, 0, 0);
         Double priceExpected = 30.5;
@@ -142,15 +135,14 @@ class PriceRestControllerTest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        PriceResponseDto priceResponseDto = mapper.readValue(contentAsString, PriceResponseDto.class);
+        PriceModel priceResponse = mapper.readValue(contentAsString, PriceModel.class);
 
-        Assertions.assertEquals(priceListExpected, priceResponseDto.getPriceList());
-        Assertions.assertEquals(brandIdExpected, priceResponseDto.getBrandId());
-        Assertions.assertEquals(productIdExpected, priceResponseDto.getProductId());
-        Assertions.assertEquals(applicationDateExpected, priceResponseDto.getApplicationDate());
-        Assertions.assertEquals(startDateExpected, priceResponseDto.getStartDate());
-        Assertions.assertEquals(endDateExpected, priceResponseDto.getEndDate());
-        Assertions.assertEquals(priceExpected, priceResponseDto.getPrice());
+        Assertions.assertEquals(priceListExpected, priceResponse.getPriceList());
+        Assertions.assertEquals(brandIdExpected, priceResponse.getBrandId());
+        Assertions.assertEquals(productIdExpected, priceResponse.getProductId());
+        Assertions.assertEquals(startDateExpected, priceResponse.getStartDate());
+        Assertions.assertEquals(endDateExpected, priceResponse.getEndDate());
+        Assertions.assertEquals(priceExpected, priceResponse.getPrice());
     }
 
     @Test
@@ -161,7 +153,6 @@ class PriceRestControllerTest {
         Integer priceListExpected = 4;
         Integer brandIdExpected = 1;
         Integer productIdExpected = 35455;
-        LocalDateTime applicationDateExpected = LocalDateTime.parse(applicationDateString);
         LocalDateTime startDateExpected = LocalDateTime.of(2020, 6, 15, 16, 0, 0);
         LocalDateTime endDateExpected = LocalDateTime.of(2020, 12, 31, 23, 59, 59);
         Double priceExpected = 38.95;
@@ -173,14 +164,13 @@ class PriceRestControllerTest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        PriceResponseDto priceResponseDto = mapper.readValue(contentAsString, PriceResponseDto.class);
+        PriceModel priceResponse = mapper.readValue(contentAsString, PriceModel.class);
 
-        Assertions.assertEquals(priceListExpected, priceResponseDto.getPriceList());
-        Assertions.assertEquals(brandIdExpected, priceResponseDto.getBrandId());
-        Assertions.assertEquals(productIdExpected, priceResponseDto.getProductId());
-        Assertions.assertEquals(applicationDateExpected, priceResponseDto.getApplicationDate());
-        Assertions.assertEquals(startDateExpected, priceResponseDto.getStartDate());
-        Assertions.assertEquals(endDateExpected, priceResponseDto.getEndDate());
-        Assertions.assertEquals(priceExpected, priceResponseDto.getPrice());
+        Assertions.assertEquals(priceListExpected, priceResponse.getPriceList());
+        Assertions.assertEquals(brandIdExpected, priceResponse.getBrandId());
+        Assertions.assertEquals(productIdExpected, priceResponse.getProductId());
+        Assertions.assertEquals(startDateExpected, priceResponse.getStartDate());
+        Assertions.assertEquals(endDateExpected, priceResponse.getEndDate());
+        Assertions.assertEquals(priceExpected, priceResponse.getPrice());
     }
 }
