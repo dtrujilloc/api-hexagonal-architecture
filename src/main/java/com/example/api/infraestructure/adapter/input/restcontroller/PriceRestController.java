@@ -1,7 +1,7 @@
 package com.example.api.infraestructure.controller;
 
-import com.example.api.infraestructure.dto.PriceResponseDto;
-import com.example.api.infraestructure.handler.PriceHandler;
+import com.example.api.domain.model.PriceModel;
+import com.example.api.domain.port.input.IPriceServiceInputPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,13 +18,14 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @RequestMapping("/price")
 public class PriceRestController {
-    private final PriceHandler priceHandler;
+    private final IPriceServiceInputPort priceServiceInputPort;
 
     @GetMapping("/product/{productId}/brand/{brandId}")
-    public PriceResponseDto getPriceByProductIdAndBrandIdAndDateAndFilterByMajorPriority(
+    public PriceModel getPriceByProductIdAndBrandIdAndDateAndFilterByMajorPriority(
             @PathVariable(name = "productId") Integer productId,
             @PathVariable(name = "brandId") Integer brandId,
             @RequestParam(name = "application-date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate) {
-        return priceHandler.getPriceByProductIdAndBrandIdAndDateAndFilterByMajorPriority(productId, brandId, applicationDate);
+
+        return priceServiceInputPort.getPriceByProductIdAndBrandIdAndDate(productId, brandId, applicationDate);
     }
 }
